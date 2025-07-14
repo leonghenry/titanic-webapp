@@ -12,7 +12,6 @@
 # ├── titanic_prediction.py    ← (Optional) Keep this for modular use
 
 
-
 from flask import Flask, request, render_template
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
@@ -61,4 +60,6 @@ def predict():
         return f"Error: {e}"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get("PORT", 5000)) # Default to port 5000 if not set by Render
+    app.run(host='0.0.0.0', port=port, debug=True)  # Set debug=True for development
