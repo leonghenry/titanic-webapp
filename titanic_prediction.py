@@ -27,4 +27,23 @@ model.fit(X_train, y_train)
 
 # Predict and evaluate
 y_pred = model.predict(X_test)
-print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Decision Tree Accuracy:", accuracy_score(y_test, y_pred))
+
+# Part 2
+# Add random forest model for comparison
+# build a random forest model
+from sklearn.ensemble import RandomForestClassifier
+rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
+rf_model.fit(X_train, y_train)
+# Predict and evaluate random forest model
+rf_y_pred = rf_model.predict(X_test)
+print("Random Forest Accuracy:", accuracy_score(y_test, rf_y_pred))
+
+#check if the random forest model is better than the decision tree model and print the best model
+if accuracy_score(y_test, rf_y_pred) > accuracy_score(y_test, y_pred):
+    print("Random Forest is the better model.")
+else:
+    print("Decision Tree is the better model.")
+    
+
+
