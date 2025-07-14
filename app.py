@@ -1,4 +1,7 @@
-
+# This is a simple Flask web application for Titanic survival prediction.
+# It uses Decision Tree and Random Forest classifiers to predict survival based on passenger data.
+# It includes a web interface for user input and displays the prediction results.
+#
 # Project structure:
 # data_science/
 # │
@@ -8,9 +11,6 @@
 # │   └── index.html           ← Web form + display results
 # ├── titanic_prediction.py    ← (Optional) Keep this for modular use
 
-## 
-# app.py - Flask web application for Titanic survival prediction
-# This file sets up a simple web interface to input passenger data and get survival predictions using Decision Tree and Random Forest models.
 
 
 from flask import Flask, request, render_template
