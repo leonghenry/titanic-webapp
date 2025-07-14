@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Titanic Survival Prediction</title>
+</head>
+<body>
+    <h1>Enter Passenger Details</h1>
+    <form method="POST" action="/predict">
+        Pclass: <input type="number" name="Pclass" required><br><br>
+        Sex:
+        <select name="Sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+        Age: <input type="number" step="any" name="Age" required><br><br>
+        Fare: <input type="number" step="any" name="Fare" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if dt_result %}
+        <p><strong>Decision Tree:</strong> {{ dt_result }}</p>
+        <p><strong>Random Forest:</strong> {{ rf_result }}</p>
+    {% endif %}
+</body>
+</html>
