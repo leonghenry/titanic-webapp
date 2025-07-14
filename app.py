@@ -59,7 +59,7 @@ def predict():
     except Exception as e:
         return f"Error: {e}"
 
+import os
 if __name__ == '__main__':
-    import os
     port = int(os.environ.get("PORT", 5000)) # Default to port 5000 if not set by Render
     app.run(host='0.0.0.0', port=port, debug=True)  # Set debug=True for development
