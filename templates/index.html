@@ -1,5 +1,5 @@
 # Titanic Survival Prediction
-# Version 2 - added comments
+# Version 2 - added suggestions for testing
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>Enter Passenger Details</h1>
+    <!-- Suggested test inputs for users -->
+    <p><strong>Try these example records:</strong></p>
+    <ul>
+        <li>Record 1: Pclass = 1, Sex = female, Age = 38, Fare = 71.28 → Likely <strong>Survived</strong></li>
+        <li>Record 2: Pclass = 3, Sex = male, Age = 25, Fare = 7.25 → Likely <strong>Did not survive</strong></li>
+    </ul>
+
     <form method="POST" action="/predict">
         Pclass: <input type="number" name="Pclass" required><br><br>
         Sex:
