@@ -47,14 +47,20 @@ def predict():
         Fare = float(request.form['Fare'])
 
         input_data = [[Pclass, Sex, Age, Fare]]
-
+        # Decision Tree prediction & probablity
         dt_pred = dt_model.predict(input_data)[0]
+        dt_prob = dt_model.predict_proba(input_data)[0][1]  # Probability of survival
+
+        # Random Forest prediction & probablity
         rf_pred = rf_model.predict(input_data)[0]
+        rf_prob = rf_model.predict_proba(input_data)[0][1]  # Probability of survival
 
         return render_template(
             'index.html',
             dt_result="Survived" if dt_pred else "Did not survive",
-            rf_result="Survived" if rf_pred else "Did not survive"
+            dt_prob=round(dt_prob * 100, 2),
+            rf_result="Survived" if rf_pred else "Did not survive",
+            rf_prob=round(rf_prob * 100, 2) 
         )
     except Exception as e:
         return f"Error: {e}"

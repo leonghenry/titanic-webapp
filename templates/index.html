@@ -1,5 +1,5 @@
 # Titanic Survival Prediction
-# Version 2 - added suggestions for testing
+# Version 3 - added suggestions for testing
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +7,15 @@
 </head>
 <body>
     <h1>Enter Passenger Details</h1>
+
+    <!-- App documentation -->
+    <p>
+        This web application predicts the survival outcome of a Titanic passenger using two machine learning models:
+        a <strong>Decision Tree</strong> and a <strong>Random Forest</strong>. 
+        Based on the entered passenger class, sex, age, and fare, each of the models will then estimate whether the passenger 
+        would have likely <em>survived</em> or <em>not survived</em>.
+    </p>
+
     <!-- Suggested test inputs for users -->
     <p><strong>Try these example records:</strong></p>
     <ul>
@@ -27,8 +36,8 @@
     </form>
 
     {% if dt_result %}
-        <p><strong>Decision Tree:</strong> {{ dt_result }}</p>
-        <p><strong>Random Forest:</strong> {{ rf_result }}</p>
+        <p><strong>Decision Tree:</strong> {{ dt_result }} - ({{ dt_prob }}%)</p>
+        <p><strong>Random Forest:</strong> {{ rf_result }} - ({{ rf_prob }}%)</p>
     {% endif %}
 </body>
 </html>
